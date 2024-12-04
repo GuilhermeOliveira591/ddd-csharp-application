@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ddd-csharp-application": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
