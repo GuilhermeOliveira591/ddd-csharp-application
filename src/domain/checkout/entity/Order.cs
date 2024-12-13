@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ddd_csharp_application.src.domain.checkout.entity;
 
 public class Order
 {
