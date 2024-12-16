@@ -3,68 +3,68 @@ using System.Collections.Generic;
 using System.Linq;
 using ddd_csharp_application.src.domain.checkout.entity;
 
-public class Order
+namespace ddd_csharp_application.src.domain.checkout.entity
 {
-    private string _id;
-    private string _customerId;
-    private List<OrderItem> _items = new List<OrderItem>();
-    private decimal _total;
-
-    // Construtor
-    public Order(string id, string customerId, List<OrderItem> items)
+    public class Order
     {
-        this._id = id;
-        this._customerId = customerId;
-        this._items = items;
-        this._total = Total();
-        Validate();
-    }
+        private string _Id;
+        private string _CustomerId;
+        private List<OrderItem> _Items = new List<OrderItem>();
+        private decimal _Total;
 
-    // Propriedades
-    public string Id
-    {
-        get { return _id; }
-    }
-
-    public string CustomerId
-    {
-        get { return _customerId; }
-    }
-
-    public List<OrderItem> Items
-    {
-        get { return _items; }
-    }
-
-    // Método para calcular o total
-    public decimal Total()
-    {
-        return _items.Sum(item => item.OrderItemTotal());
-    }
-
-    // Método para validar os dados
-    public bool Validate()
-    {
-        if (string.IsNullOrEmpty(_id))
+        public Order(string id, string customerId, List<OrderItem> items)
         {
-            throw new ArgumentException("Id is required");
+            this._Id = id;
+            this._CustomerId = customerId;
+            this._Items = items;
+            this._Total = Total();
+            Validate();
         }
 
-        if (string.IsNullOrEmpty(_customerId))
+        public string Id
         {
-            throw new ArgumentException("CustomerId is required");
+            get { return _Id; }
         }
 
-        if (_items.Count == 0)
+        public string CustomerId
         {
-            throw new ArgumentException("Items are required");
+            get { return _CustomerId; }
         }
 
-        if (_items.Any(item => item.Quantity <= 0))
+        public List<OrderItem> Items
         {
-            throw new ArgumentException("Quantity must be greater than zero");
+            get { return _Items; }
         }
 
-        return true;
+        public decimal Total()
+        {
+            return _Items.Sum(item => item.OrderItemTotal());
+        }
+
+        public bool Validate()
+        {
+            if (string.IsNullOrEmpty(_Id))
+            {
+                throw new ArgumentException("Id is required");
+            }
+
+            if (string.IsNullOrEmpty(_CustomerId))
+            {
+                throw new ArgumentException("CustomerId is required");
+            }
+
+            if (_Items.Count == 0)
+            {
+                throw new ArgumentException("Items are required");
+            }
+
+            if (_Items.Any(item => item.Quantity <= 0))
+            {
+                throw new ArgumentException("Quantity must be greater than zero");
+            }
+
+            return true;
+        }
     }
+
 }

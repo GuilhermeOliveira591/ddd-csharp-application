@@ -9,50 +9,50 @@ namespace ddd_csharp_application.src.domain.checkout.entity
 {
     public class OrderItem
     {
-        private string _id;
-        private string _productId;
-        private string _name;
-        private decimal _price;
-        private int _quantity;
+        private string _Id;
+        private string _ProductId;
+        private string _Name;
+        private decimal _Price;
+        private int _Quantity;
 
 
         public OrderItem(string id, string name, string productId, decimal price, int quantity)
         {
-            this._id = id;
-            this._productId = productId;
-            this._name = name;
-            this._price = price;
-            this._quantity = quantity;
+            this._Id = id;
+            this._ProductId = productId;
+            this._Name = name;
+            this._Price = price;
+            this._Quantity = quantity;
         }
 
         public string Id
         {
-            get { return _id; }
+            get { return _Id; }
         }
 
         public string Name
         { 
-            get { return _name; } 
+            get { return _Name; } 
         }
 
         public decimal Price
         {
-            get { return _price; }
+            get { return _Price; }
         }
 
         public int Quantity
         {
-            get { return _quantity; }
+            get { return _Quantity; }
         }
 
         public string ProductId
         {
-            get { return _productId; }
+            get { return _ProductId; }
         }
 
         public decimal OrderItemTotal()
         {
-            return this._price * this._quantity;
+            return this._Price * this._Quantity;
         }
 
     }
