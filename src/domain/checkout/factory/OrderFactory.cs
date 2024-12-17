@@ -10,41 +10,18 @@ using NUnit.Framework.Interfaces;
 
 namespace ddd_csharp_application.src.domain.checkout.factory
 {
-    public interface IOrderFactoryProps
+
+    public class OrderFactory
     {
-        string Id { get; set; }
-        string CustomerId { get; set; }
-        List<OrderItem> Items { get; set; }
-    }
 
-    public class OrderFactory : IOrderFactoryProps
-    {
-        public string Id { get; set; }
-        public string CustomerId { get; set; }
-        public List<OrderItem> Items { get; set; }
+        public static OrderEntity Create(OrderEntity props) {
 
-        public static Order Create(IOrderFactoryProps props) {
+            var items = props.Items.Select(item => new OrderItemEntity(
+                item.Id, item.Name, item.ProductId, item.Price, item.Quantity
+            )).ToList();
 
-            var items = props.Items.Select(item => new OrderItem(item.Id, item.Name, item.ProductId, item.Price, item.Quantity)).ToList();
-
-            return new Order(props.Id, props.CustomerId, items);
+            return new OrderEntity(props.Id, props.CustomerId, items);
         }
-
-        public static IOrderFactoryProps ConvertToOrderFactoryProps(object anonymousObject)
-        {
-            var id = anonymousObject.GetType().GetProperty("Id")?.GetValue(anonymousObject).ToString();
-            var customerId = anonymousObject.GetType().GetProperty("CustomerId")?.GetValue(anonymousObject).ToString();
-            var items = anonymousObject.GetType().GetProperty("Items")?.GetValue(anonymousObject) as List<OrderItem>;
-
-            // Retornando a instância de IOrderFactoryProps
-            return new OrderFactory
-            {
-                Id = id,
-                CustomerId = customerId,
-                Items = items
-            };
-        }
-
 
     }
 }

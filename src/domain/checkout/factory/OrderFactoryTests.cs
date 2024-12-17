@@ -15,32 +15,31 @@ public class OrderFactoryTests
     [Test]
     public void ShouldCreateAnOrder()
     {
-        var orderProps = new
-        {
-            Id = Guid.NewGuid().ToString(),
-            CustomerId = Guid.NewGuid().ToString(),
-            Items = new List<OrderItem>
-            {
-                new OrderItem(
-                    Guid.NewGuid().ToString(),
-                    "Teste",
-                    Guid.NewGuid().ToString(),
-                    100m,
-                    1
-                )
-            }
-        };
+        List<OrderItemEntity> items = new List<OrderItemEntity>();
 
-        var convert = OrderFactory.ConvertToOrderFactoryProps(orderProps);
-        var order = OrderFactory.Create(convert);
+        var orderItem = new OrderItemEntity(
+            Guid.NewGuid().ToString(),
+            "Teste",
+            Guid.NewGuid().ToString(),
+            100m,
+            1
+        );
 
-        Assert.AreEqual(convert.Id, order.Id);
-        Assert.AreEqual(convert.CustomerId, order.CustomerId);
-        Assert.AreEqual(convert.Items.Count, order.Items.Count);
+        items.Add(orderItem);
+
+        var orderObject = new OrderEntity(
+            Guid.NewGuid().ToString(), 
+            Guid.NewGuid().ToString(), 
+            items
+        );
+
+        var order = OrderFactory.Create(orderObject);
+
+        Assert.AreEqual(orderObject.Id, order.Id);
+        Assert.AreEqual(orderObject.CustomerId, order.CustomerId);
+        Assert.AreEqual(orderObject.Items.Count, order.Items.Count);
 
     }
-
-
 
 
 }

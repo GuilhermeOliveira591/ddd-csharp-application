@@ -16,10 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="src\domain\%40shared\" />
-    <Folder Include="src\domain\customer\" />
-    <Folder Include="src\domain\product\" />
-    <Folder Include="src\infrastructure\" />
+    <Folder Include="src\Domain\Product\" />
+    <Folder Include="src\Infrastructure\" />
   </ItemGroup>
 
 </Project>
