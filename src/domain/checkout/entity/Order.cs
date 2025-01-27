@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ddd_csharp_application.src.domain.checkout.entity;
+using ddd_csharp_application.src.Domain.Checkout.Entity;
 
-namespace ddd_csharp_application.src.domain.checkout.entity
+namespace ddd_csharp_application.src.Domain.Checkout.Entity
 {
     public class OrderEntity
     {

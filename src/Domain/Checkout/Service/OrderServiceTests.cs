@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ddd_csharp_application.src.domain.checkout.entity;
+using ddd_csharp_application.src.Domain.Checkout.Entity;
 using ddd_csharp_application.src.Domain.Checkout.Service;
 using ddd_csharp_application.src.Domain.Customer.Entity;
 using NUnit.Framework;

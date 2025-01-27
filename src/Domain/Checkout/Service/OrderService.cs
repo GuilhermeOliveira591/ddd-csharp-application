@@ -1,4 +1,4 @@
-﻿using ddd_csharp_application.src.domain.checkout.entity;
+﻿using ddd_csharp_application.src.Domain.Checkout.Entity;
 using ddd_csharp_application.src.Domain.Customer.Entity;
 
 namespace ddd_csharp_application.src.Domain.Checkout.Service

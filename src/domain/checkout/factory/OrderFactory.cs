@@ -4,11 +4,11 @@ using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ddd_csharp_application.src.domain.checkout.entity;
+using ddd_csharp_application.src.Domain.Checkout.Entity;
 using Newtonsoft.Json;
 using NUnit.Framework.Interfaces;
 
-namespace ddd_csharp_application.src.domain.checkout.factory
+namespace ddd_csharp_application.src.Domain.Checkout.Factory
 {
 
     public class OrderFactory

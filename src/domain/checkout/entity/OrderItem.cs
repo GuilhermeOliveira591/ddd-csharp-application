@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ddd_csharp_application.src.domain.checkout.entity
+namespace ddd_csharp_application.src.Domain.Checkout.Entity
 {
     public class OrderItemEntity
     {
