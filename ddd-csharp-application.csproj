@@ -16,7 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="src\Domain\Product\" />
+    <Folder Include="src\Domain\Product\Event\" />
+    <Folder Include="src\Domain\Product\Factory\" />
+    <Folder Include="src\Domain\Product\Service\" />
+    <Folder Include="src\Domain\Product\Repository\" />
     <Folder Include="src\Infrastructure\" />
   </ItemGroup>
 
